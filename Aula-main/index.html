@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<!-- 
+  DOCTYPE html: Essa linha diz ao navegador que este é um documento HTML5.
+  Deve ser sempre a PRIMEIRA linha de qualquer página HTML!
+-->
+
+<html lang="pt-BR">
+<!--
+  <html>: É a TAG RAIZ. Todo o conteúdo da página fica dentro dela.
+  lang="pt-BR": O atributo "lang" informa o idioma da página.
+  Atributos ficam DENTRO da tag de abertura, no formato: nome="valor"
+-->
+
+<head>
+  <!--
+    <head>: Área de CONFIGURAÇÕES da página.
+    O conteúdo aqui NÃO aparece na tela, mas é importante para o navegador.
+  -->
+
+  <meta charset="UTF-8">
+  <!-- 
+    <meta charset>: Define que a página usa UTF-8.
+    Isso garante que acentos e caracteres especiais (ã, é, ç) apareçam corretamente.
+  -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+    viewport: Faz a página se adaptar a celulares e tablets.
+    Sem isso, em celulares a página pode aparecer muito pequena!
+  -->
+
+  <title>Minha Primeira Página HTML</title>
+  <!--
+    <title>: Define o texto que aparece na ABA do navegador.
+    Experimente trocar o texto e veja o nome da aba mudar!
+  -->
+
+  <link rel="stylesheet" href="style.css">
+  <!--
+    <link>: Conecta este HTML ao arquivo de estilos CSS.
+    href="style.css": caminho do arquivo CSS (deve estar na mesma pasta).
+    rel="stylesheet": diz que o arquivo vinculado é uma folha de estilos.
+  -->
+
+</head>
+
+<body>
+  <!--
+    <body>: Tudo que aparece na TELA fica aqui dentro.
+    É o "corpo" da página!
+  -->
+
+  <!-- ============================================================
+    SEÇÃO: CABEÇALHO (HEADER)
+    O <header> geralmente contém o logo e o menu de navegação.
+  ============================================================ -->
+  <header class="cabecalho">
+    <!--
+      class="cabecalho": O atributo CLASS é uma etiqueta que você coloca
+      em um elemento para poder estilizá-lo no CSS.
+      No arquivo style.css, você vai encontrar ".cabecalho { ... }"
+    -->
+
+    <div class="logo">
+      <!--
+        <div>: É uma CAIXA genérica, usada para agrupar elementos.
+        Por si só não tem visual, mas serve para organizar e estilizar com CSS.
+      -->
+      📄 Curriculo
+    </div>
+
+    <nav class="menu">
+      <!--
+        <nav>: Tag semântica para NAVEGAÇÃO.
+        "Semântico" significa que a tag descreve o que o conteúdo é,
+        não apenas como ele parece.
+      -->
+      <a href="#sobre">Sobre</a>
+      <a href="#conteudo">Conteúdo</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#contato">Contato</a>
+      <!--
+        <a href="">: Tag de LINK (âncora).
+        href="#sobre": o "#" significa que vai rolar para um ID na mesma página.
+        Experimente trocar por href="https://google.com" para ir a outro site!
+      -->
+    </nav>
+  </header>
+
+
+  <!-- ============================================================
+    SEÇÃO: BANNER PRINCIPAL (HERO)
+    Uma seção de destaque no topo da página.
+  ============================================================ -->
+  <section class="hero" id="inicio">
+    <!--
+      <section>: Agrupa um BLOCO DE CONTEÚDO com tema próprio.
+      id="inicio": O ID é um identificador ÚNICO. Só pode existir um por página.
+      Diferente do class (que pode repetir), o id identifica um elemento específico.
+    -->
+
+    <div class="hero-texto">
+      <h1>Olá, mundo! 👋</h1>
+      <!--
+        <h1> até <h6>: Tags de TÍTULO (heading).
+        h1 = título mais importante (use apenas 1 por página)
+        h2 = subtítulo
+        h3, h4, h5, h6 = títulos menores
+        O tamanho diminui do h1 ao h6.
+      -->
+
+      <p>Bem-vindo à sua <strong>primeira página HTML</strong>!</p>
+      <!--
+        <p>: Define um PARÁGRAFO de texto.
+        <strong>: Deixa o texto em NEGRITO e indica importância.
+        Experimente trocar por <em> para deixar em itálico!
+      -->
+
+      <p>Explore este site e leia os comentários no código para aprender.</p>
+
+      <a href="#conteudo" class="botao">Explorar ↓</a>
+      <!--
+        Um link com class="botao" vai receber visual de botão via CSS.
+        O visual não vem do HTML, mas do CSS!
+      -->
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+    SEÇÃO: SOBRE
+  ============================================================ -->
+  <section class="secao" id="sobre">
+
+    <h2>Sobre HTML & CSS</h2>
+    <!--
+      <h2>: Subtítulo da seção. Aqui usamos h2 porque o h1 já foi usado no hero.
+    -->
+
+    <p>
+      <strong>HTML</strong> (HyperText Markup Language) é a <em>estrutura</em> da página.
+      <strong>CSS</strong> (Cascading Style Sheets) é o <em>visual</em> da página.
+    </p>
+    <!--
+      <em>: Itálico com ênfase semântica (emphasis).
+    -->
+
+    <div class="caixa-dica">
+      <!--
+        Essa <div> com class="caixa-dica" vai receber um estilo especial no CSS.
+        Qualquer elemento pode ser estilizado criando uma classe para ele!
+      -->
+      💡 <strong>Dica:</strong> Clique com o botão direito na página e escolha
+      <em>"Inspecionar"</em> para ver o código funcionando ao vivo no navegador!
+    </div>
+
+    <div class="cards">
+      <!--
+        Vamos criar 3 "cards" lado a lado usando CSS Flexbox.
+        Veja no CSS como ".cards" é estilizado!
+      -->
+
+      <div class="card">
+        <span class="icone">🏗️</span>
+        <h3>HTML</h3>
+        <p>Estrutura e conteúdo da página. Define títulos, parágrafos, imagens e links.</p>
+        <!--
+          <span>: Igual ao <div>, mas é INLINE (fica na mesma linha do texto).
+          <div> é BLOCK (ocupa uma linha inteira).
+        -->
+      </div>
+
+      <div class="card">
+        <span class="icone">🎨</span>
+        <h3>CSS</h3>
+        <p>Visual e aparência. Define cores, tamanhos, fontes e posicionamento.</p>
+      </div>
+
+      <div class="card">
+        <span class="icone">⚡</span>
+        <h3>JavaScript</h3>
+        <p>Comportamento e interatividade. Faz a página reagir a ações do usuário.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+    SEÇÃO: CONTEÚDO - TAGS MAIS USADAS
+  ============================================================ -->
+  <section class="secao secao-escura" id="conteudo">
+    <!--
+      Um elemento pode ter VÁRIAS classes ao mesmo tempo!
+      class="secao secao-escura" aplica os estilos de ambas as classes.
+      Separe os nomes de classe por ESPAÇO.
+    -->
+
+    <h2>Tags Essenciais do HTML</h2>
+
+    <div class="tabela-wrapper">
+      <table>
+        <!--
+          <table>: Cria uma TABELA.
+          <thead>: Cabeçalho da tabela.
+          <tbody>: Corpo da tabela.
+          <tr>: Table Row = linha da tabela.
+          <th>: Table Header = célula de cabeçalho (negrito por padrão).
+          <td>: Table Data = célula de dado.
+        -->
+        <thead>
+          <tr>
+            <th>Tag</th>
+            <th>O que faz</th>
+            <th>Exemplo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>&lt;h1&gt; ~ &lt;h6&gt;</code></td>
+            <td>Títulos</td>
+            <td><code>&lt;h1&gt;Título Principal&lt;/h1&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;p&gt;</code></td>
+            <td>Parágrafo</td>
+            <td><code>&lt;p&gt;Meu texto aqui.&lt;/p&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;a&gt;</code></td>
+            <td>Link</td>
+            <td><code>&lt;a href="url"&gt;Clique aqui&lt;/a&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;img&gt;</code></td>
+            <td>Imagem</td>
+            <td><code>&lt;img src="foto.jpg" alt="descrição"&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;ul&gt; / &lt;ol&gt;</code></td>
+            <td>Lista</td>
+            <td><code>&lt;ul&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ul&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;div&gt;</code></td>
+            <td>Caixa (bloco)</td>
+            <td><code>&lt;div class="minha-classe"&gt;...&lt;/div&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;span&gt;</code></td>
+            <td>Caixa (inline)</td>
+            <td><code>&lt;span style="color:red"&gt;texto&lt;/span&gt;</code></td>
+          </tr>
+        </tbody>
+      </table>
+      <!--
+        <code>: Exibe texto como código (fonte monoespaçada).
+        Ideal para mostrar código dentro de um parágrafo.
+      -->
+    </div>
+
+
+    <!-- LISTAS -->
+    <div class="duas-colunas">
+
+      <div>
+        <h3>Lista Não Ordenada (bolinhas)</h3>
+        <ul>
+          <!--
+            <ul>: Unordered List = lista com marcadores (bolinhas).
+            Cada item é um <li> (list item).
+          -->
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Python</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Lista Ordenada (números)</h3>
+        <ol>
+          <!--
+            <ol>: Ordered List = lista numerada automaticamente.
+          -->
+          <li>Aprenda HTML</li>
+          <li>Aprenda CSS</li>
+          <li>Aprenda JavaScript</li>
+          <li>Crie projetos!</li>
+        </ol>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+    SEÇÃO: GALERIA DE IMAGENS
+  ============================================================ -->
+  <section class="secao" id="galeria">
+
+    <h2>Imagens no HTML</h2>
+
+    <p>A tag <code>&lt;img&gt;</code> insere imagens. Veja os atributos importantes:</p>
+
+    <div class="caixa-dica">
+      <strong>src</strong> = caminho da imagem &nbsp;|&nbsp;
+      <strong>alt</strong> = texto alternativo (acessibilidade) &nbsp;|&nbsp;
+      <strong>width / height</strong> = tamanho em pixels
+    </div>
+
+    <div class="galeria">
+      <!--
+        Abaixo usamos imagens de placeholder (placeholder.com).
+        Na sua página real, substitua por imagens suas!
+        Formato: <img src="sua-imagem.jpg" alt="descrição da imagem">
+      -->
+
+      <figure>
+        <!--
+          <figure>: Agrupa uma imagem com sua legenda.
+          <figcaption>: Legenda da imagem dentro do <figure>.
+        -->
+        <img src="ELETRICA.png" alt="Imagem de exemplo 1" width="300" height="200">
+        <figcaption>Elétrica Predial</figcaption>
+      </figure>
+
+      <figure>
+      <img src="industrial.jpg"Imagem de exemplo 2" width="300" height="200">
+        <figcaption>Elétrica Industrial
+      </figure>
+
+      <figure>
+        <img src="fios.png" alt="Imagem de exemplo 3" width="300" height="200">
+        <figcaption>Instalaçoes Gerais
+      </figure>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+    SEÇÃO: FORMULÁRIO
+  ============================================================ -->
+  <section class="secao secao-escura" id="contato">
+
+    <h2>Formulários</h2>
+    <p>Formulários coletam informações do usuário. Veja as tags:</p>
+
+    <form class="formulario">
+      <!--
+        <form>: Contêiner do formulário.
+        action="": para onde os dados são enviados (deixamos vazio por enquanto).
+        method="post": como os dados são enviados (get ou post).
+      -->
+
+      <div class="campo">
+        <label for="nome">Seu Nome:</label>
+        <!--
+          <label>: Etiqueta do campo. O atributo "for" deve ter o mesmo
+          valor do "id" do campo que ele descreve. Isso vincula os dois!
+          Clicar no label foca automaticamente no campo correspondente.
+        -->
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+        <!--
+          <input>: Campo de entrada de dados. Não tem tag de fechamento!
+          type="text" → campo de texto
+          type="email" → valida formato de e-mail
+          type="number" → aceita apenas números
+          type="password" → oculta o texto digitado
+          type="checkbox" → caixa de seleção
+          type="radio" → escolha única entre opções
+          placeholder → texto de dica dentro do campo
+          name → nome do dado enviado ao servidor
+        -->
+      </div>
+
+      <div class="campo">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="seu@email.com">
+      </div>
+
+      <div class="campo">
+        <label for="curso">Curso favorito:</label>
+        <select id="curso" name="curso">
+          <!--
+            <select>: Cria um menu de opções (dropdown).
+            Cada opção é um <option>.
+            value= é o valor enviado ao servidor.
+          -->
+          <option value="">-- Escolha --</option>
+          <option value="html">HTML & CSS</option>
+          <option value="js">JavaScript</option>
+          <option value="python">Python</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva aqui..."></textarea>
+        <!--
+          <textarea>: Campo de texto com múltiplas linhas.
+          rows="4" → altura inicial em linhas.
+          Diferente do <input>, o <textarea> TEM tag de fechamento!
+        -->
+      </div>
+
+      <button type="submit" class="botao">Enviar Mensagem 🚀</button>
+      <!--
+        <button>: Cria um botão.
+        type="submit" → envia o formulário
+        type="button" → apenas um botão clicável (use com JavaScript)
+        type="reset" → limpa todos os campos do formulário
+      -->
+
+    </form>
+  </section>
+
+
+  <!-- ============================================================
+    RODAPÉ (FOOTER)
+  ============================================================ -->
+  <footer class="rodape">
+    <!--
+      <footer>: Rodapé da página. Tag semântica.
+      Geralmente contém informações de copyright, links extras, etc.
+    -->
+
+    <p>
+      Feito com ❤️ para aprender HTML & CSS &nbsp;|&nbsp;
+      <a href="#inicio">Voltar ao topo ↑</a>
+    </p>
+
+    <p style="font-size: 0.8rem; opacity: 0.7;">
+      <!--
+        style="": O atributo STYLE aplica CSS diretamente no elemento (inline CSS).
+        É útil para ajustes rápidos, mas o ideal é usar um arquivo CSS separado!
+        font-size: tamanho da fonte | opacity: transparência (0 = invisível, 1 = opaco)
+      -->
+      💡 Dica: inspecione este código com F12 no navegador!
+    </p>
+  </footer>
+
+</body>
+<!-- Fim do body: todo conteúdo visível deve estar entre <body> e </body> -->
+
+</html>
+<!-- Fim do documento HTML. Sempre feche a tag <html> no final! -->
